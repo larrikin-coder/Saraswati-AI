@@ -7,6 +7,9 @@ import NavigationLink from "./navilink";
 
 const Header = () => {
   const auth = useAuth();
+  function check(){
+    console.log("working")
+  }
   return (
     <AppBar
       sx={{ bgcolor: "transparent", position: "static", boxShadow: "none" }}
@@ -27,7 +30,7 @@ const Header = () => {
                 textColor="white"
                 to="/"
                 text="logout"
-                onClick={auth.logout}
+                onClick={auth.logout()}
               />
             </>
           ) : (
