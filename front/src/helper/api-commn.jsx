@@ -27,6 +27,16 @@ export async function checkAuthStatus() {
   return data;
 }
 
+export async function getResponse(query){
+  const res = await axios.post('http://127.0.0.1:5001/response',{query});
+  console.log(query)
+  if (res.status !== 200) {
+    throw new Error("Unable to get the response");
+  }
+  const data = await res.data;
+  return data;
+}
+
 // export async function sendChatRequest(message) {
 //   const res = await axios.post("/chat/new", { message });
 //   if (res.status !== 200) {
