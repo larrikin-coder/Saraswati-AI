@@ -2,6 +2,7 @@ import User from "../models/User.js";
 import { hash, compare } from "bcrypt";
 import { createToken } from "../utils/token-manager.js";
 import { COOKIE_NAME } from "../utils/constants.js";
+import axios from "axios"
 export const getAllUsers = async (req, res, next) => {
     try {
         //get all users
@@ -127,6 +128,26 @@ export const userLogout = async (req, res, next) => {
         return res
             .status(200)
             .json({ message: "OK", name: user.name, email: user.email });
+    }
+    catch (error) {
+        console.log("catch")
+        console.log(error);
+        return res.status(200).json({ message: "ERROR", cause: error.message });
+    }
+};
+export const response = async (req, res, next) => {
+    try {
+      axios.post("http://127.0.0.1:5000/response",req.body, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error('There was an error!');
+      });
     }
     catch (error) {
         console.log("catch")
