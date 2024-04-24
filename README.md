@@ -1,2 +1,2 @@
-cd front
-npm run dev
+npm start
+no need for seprate start
