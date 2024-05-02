@@ -30,7 +30,7 @@ function Chat() {
             // Simulate a response
             const response = getResponse(query);
             console.log(response)
-            newMessages.push({ text: "Hey ladies knock me down", sender: 'Bot' });
+            newMessages.push({ text: response, sender: 'Bot' });
             setMessages(newMessages);
             setQuery("");
         }
