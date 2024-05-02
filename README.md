@@ -1,2 +1,2 @@
 npm start</br>
-no need for seprate start
+in the project dir
