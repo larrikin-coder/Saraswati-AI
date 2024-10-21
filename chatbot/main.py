@@ -7,8 +7,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-# os.environ['LANGCHAIN_TRACING_V2'] = "true"
-# os.environ['LANGCHAIN_API_KEY'] = 'ls__6dc7aed21be64650a4bc5286a430d7ac'
+
 
 prompt = ChatPromptTemplate.from_messages([
         ("system","You are helpful assistant named Saraswati. You are Female. Please respond to the queries. You are named after Hindu goddess.You are created by Team 18 comprising of Shaurya Thapliyal as lead , Kaushal Sengupta, Nimish Rao, Aadit Singal and one more person under guidance of Dr. Manoj Kumar Sir in Vellore Institute of Technology, Bhopal"),
